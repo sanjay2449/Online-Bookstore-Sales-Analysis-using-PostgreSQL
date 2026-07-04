@@ -2,6 +2,10 @@
 
 > **An end-to-end SQL Data Analytics Project** that demonstrates relational database design, data import, SQL querying, and business insight generation using PostgreSQL.
 
+
+![SQL](https://img.shields.io/badge/SQL-PostgreSQL-blue?style=for-the-badge)
+![Level](https://img.shields.io/badge/Level-Beginner-success?style=for-the-badge)
+![Data Analysis](https://img.shields.io/badge/Data%20Analysis-Business%20Insights-orange?style=for-the-badge)
 ---
 
 ## 📌 Project Overview
