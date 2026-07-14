@@ -1,39 +1,41 @@
 # 📚 Online Bookstore Sales Analysis using PostgreSQL
 
-> **An end-to-end SQL Data Analytics Project** that demonstrates relational database design, data import, SQL querying, and business insight generation using PostgreSQL.
-
+> An end-to-end SQL Data Analytics project demonstrating database design, data import, SQL querying, and business insight generation using PostgreSQL.
 
 ![SQL](https://img.shields.io/badge/SQL-PostgreSQL-blue?style=for-the-badge)
 ![Level](https://img.shields.io/badge/Level-Beginner-success?style=for-the-badge)
-![Data Analysis](https://img.shields.io/badge/Data%20Analysis-Business%20Insights-orange?style=for-the-badge)
----
-
-## 📌 Project Overview
-
-This project simulates a real-world **Online Bookstore Management System** where customer purchases, book inventory, and sales transactions are stored in a relational database.
-
-The objective of this project is to transform raw transactional data into meaningful business insights by writing efficient SQL queries and applying database concepts commonly used in data analytics roles.
+![Database](https://img.shields.io/badge/Database-PostgreSQL-336791?style=for-the-badge)
 
 ---
 
-## 🎯 Business Objectives
+# 📌 Project Overview
 
-* Design a normalized relational database
-* Import CSV datasets into PostgreSQL
-* Analyze customer purchasing behavior
-* Evaluate book sales performance
-* Monitor inventory levels
-* Generate revenue and sales insights
-* Practice SQL queries frequently asked in Data Analyst interviews
+This project simulates an **Online Bookstore Management System** where books, customers, and orders are stored in a relational database.
+
+The project focuses on designing a relational database, importing CSV datasets, writing SQL queries, and extracting meaningful business insights from transactional data.
+
+It is designed to strengthen SQL skills commonly required for **Data Analyst** and **Business Analyst** roles.
 
 ---
 
-## 🛠 Tech Stack
+# 🎯 Business Objectives
 
-* **Database:** PostgreSQL
-* **Language:** SQL
-* **Data Source:** CSV Files
-* **IDE:** pgAdmin / PostgreSQL
+- Design a relational database
+- Import CSV datasets into PostgreSQL
+- Analyze customer purchasing behavior
+- Evaluate book sales performance
+- Monitor inventory levels
+- Generate revenue insights
+- Practice interview-oriented SQL queries
+
+---
+
+# 🛠 Tech Stack
+
+- **Database:** PostgreSQL
+- **Language:** SQL
+- **Dataset:** CSV Files
+- **IDE:** pgAdmin 4
 
 ---
 
@@ -47,11 +49,7 @@ Online-Bookstore-SQL-Project/
 │   ├── Customers.csv
 │   └── Orders.csv
 │
-│── SQL/
-│   ├── Create_Tables.sql
-│   ├── Import_Data.sql
-│   ├── Basic_Queries.sql
-│   └── Business_Analysis.sql
+│── OnlineBookstore.sql
 │
 ├── README.md
 ```
@@ -64,47 +62,41 @@ The project contains three relational tables.
 
 ## 📖 Books
 
-Stores information about available books.
-
-| Column         | Description         |
-| -------------- | ------------------- |
-| Book_ID        | Primary Key         |
-| Title          | Book Name           |
-| Author         | Author Name         |
-| Genre          | Book Category       |
-| Published_Year | Publication Year    |
-| Price          | Book Price          |
-| Stock          | Available Inventory |
+| Column | Description |
+|---------|-------------|
+| Book_ID | Primary Key |
+| Title | Book Name |
+| Author | Author Name |
+| Genre | Category |
+| Published_Year | Publication Year |
+| Price | Book Price |
+| Stock | Available Stock |
 
 ---
 
 ## 👤 Customers
 
-Stores customer information.
-
-| Column      | Description    |
-| ----------- | -------------- |
-| Customer_ID | Primary Key    |
-| Name        | Customer Name  |
-| Email       | Email Address  |
-| Phone       | Contact Number |
-| City        | City           |
-| Country     | Country        |
+| Column | Description |
+|---------|-------------|
+| Customer_ID | Primary Key |
+| Name | Customer Name |
+| Email | Email Address |
+| Phone | Contact Number |
+| City | City |
+| Country | Country |
 
 ---
 
 ## 🛒 Orders
 
-Stores all purchase transactions.
-
-| Column       | Description     |
-| ------------ | --------------- |
-| Order_ID     | Primary Key     |
-| Customer_ID  | Foreign Key     |
-| Book_ID      | Foreign Key     |
-| Order_Date   | Purchase Date   |
-| Quantity     | Books Purchased |
-| Total_Amount | Order Value     |
+| Column | Description |
+|---------|-------------|
+| Order_ID | Primary Key |
+| Customer_ID | Foreign Key |
+| Book_ID | Foreign Key |
+| Order_Date | Purchase Date |
+| Quantity | Books Purchased |
+| Total_Amount | Order Value |
 
 ---
 
@@ -113,7 +105,6 @@ Stores all purchase transactions.
 ```
 Customers
     │
-    │
     ▼
  Orders
     ▲
@@ -121,19 +112,19 @@ Customers
 Books
 ```
 
-* One Customer → Many Orders
-* One Book → Many Orders
-* Orders table connects Customers and Books
+- One Customer → Many Orders
+- One Book → Many Orders
+- Orders table connects Customers and Books
 
 ---
 
 # 📥 Data Import
 
-CSV files were imported into PostgreSQL using the **COPY** command.
+The datasets were imported into PostgreSQL using the **COPY** command.
 
-* Books.csv
-* Customers.csv
-* Orders.csv
+- Books.csv
+- Customers.csv
+- Orders.csv
 
 ---
 
@@ -141,94 +132,116 @@ CSV files were imported into PostgreSQL using the **COPY** command.
 
 ## Basic SQL Queries
 
-* Retrieve books by genre
-* Filter books by publication year
-* Find books within a price range
-* Identify customers by country
-* Retrieve orders within a date range
-* Calculate total inventory
-* Find the most expensive book
-* Identify low-stock books
-* Calculate total revenue
+✔ Retrieve books by genre
+
+✔ Find books published after a specific year
+
+✔ Retrieve customers by country
+
+✔ Filter orders by date
+
+✔ Calculate total inventory
+
+✔ Find the most expensive book
+
+✔ Find books with lowest stock
+
+✔ Calculate total revenue
+
+✔ Retrieve distinct genres
+
+✔ Filter orders by quantity and amount
 
 ---
 
-# 📈 Business Analysis Queries
+## Business Analysis Queries
 
 ### 📚 Total Books Sold by Genre
 
-Used **JOIN**, **SUM()**, and **GROUP BY** to determine the best-performing genres.
+Used **JOIN**, **SUM()**, and **GROUP BY** to determine best-selling genres.
 
 ---
 
-### 💰 Average Price by Genre
+### 💰 Average Price of Fantasy Books
 
-Analyzed pricing trends using the **AVG()** function.
+Calculated average book price using **AVG()**.
 
 ---
 
 ### 👥 Repeat Customers
 
-Identified customers placing multiple orders using **GROUP BY** and **HAVING**.
+Identified customers who placed multiple orders using **GROUP BY** and **HAVING**.
 
 ---
 
-### 🔥 Most Frequently Ordered Books
+### 🔥 Most Frequently Ordered Book
 
-Ranked books based on customer demand using **COUNT()** and **ORDER BY**.
+Ranked books based on customer demand using **COUNT()**.
 
 ---
 
-### ✍️ Author Performance
+### 📖 Top 3 Most Expensive Fantasy Books
+
+Filtered books by genre and ranked using **ORDER BY**.
+
+---
+
+### ✍️ Author Sales Performance
 
 Calculated total quantity sold for each author.
 
 ---
 
-### 💵 Highest Spending Customers
+### 🌍 Customer Cities with High Spending
 
-Used **SUM()** aggregation to identify customers generating maximum revenue.
-
----
-
-### 📦 Inventory Remaining
-
-Calculated remaining stock after completed orders using:
-
-* LEFT JOIN
-* COALESCE()
-* Aggregate Functions
+Identified cities where customers spent more than \$30.
 
 ---
 
-# 📊 Business Insights
+### 💵 Highest Spending Customer
 
-* Certain book genres generate significantly higher sales.
-* A small number of books contribute to most of the total revenue.
-* Repeat customers play an important role in overall sales.
-* Inventory analysis helps identify books that require restocking.
-* Customer spending analysis highlights high-value customers.
-* Sales trends can support pricing and inventory decisions.
+Calculated total customer spending using **SUM()**.
+
+---
+
+### 📦 Remaining Inventory
+
+Calculated remaining stock after fulfilling customer orders using:
+
+- LEFT JOIN
+- COALESCE()
+- Aggregate Functions
+
+---
+
+# 📈 Business Insights
+
+- Fiction and Fantasy genres generate strong sales.
+- A small number of books contribute significantly to total revenue.
+- Repeat customers increase overall business value.
+- Inventory analysis helps identify books that require restocking.
+- Customer spending patterns highlight high-value customers.
+- Sales reports support pricing and inventory decisions.
 
 ---
 
 # 🧠 SQL Concepts Demonstrated
 
-* Database Design
-* Primary Keys
-* Foreign Keys
-* INNER JOIN
-* LEFT JOIN
-* GROUP BY
-* HAVING
-* ORDER BY
-* Aggregate Functions
-* CASE Statements
-* Filtering
-* Date Functions
-* Subqueries
-* Inventory Calculations
-* Business Reporting
+- Database Design
+- Primary Keys
+- Foreign Keys
+- INNER JOIN
+- LEFT JOIN
+- GROUP BY
+- HAVING
+- ORDER BY
+- Aggregate Functions
+- Filtering
+- DISTINCT
+- Date Filtering
+- COALESCE()
+- Inventory Calculations
+- Business Reporting
 
 ---
 
@@ -246,53 +259,59 @@ CREATE DATABASE OnlineBookstore;
 \c OnlineBookstore
 ```
 
-### 3️⃣ Create Tables
+### 3️⃣ Execute SQL File
 
-Execute the table creation script.
+Run:
 
-### 4️⃣ Import CSV Files
+```
+OnlineBookstore.sql
+```
 
-Import all datasets using the PostgreSQL COPY command.
+This script will:
 
-### 5️⃣ Execute SQL Queries
-
-Run the SQL scripts to generate business reports and insights.
+- Create all tables
+- Import CSV data
+- Execute all SQL queries
+- Generate business reports
 
 ---
 
 # 🎯 Learning Outcomes
 
-Through this project, I strengthened my understanding of:
+Through this project I strengthened my understanding of:
 
-* Relational Database Design
-* SQL Query Optimization
-* Business-Oriented Data Analysis
-* Data Aggregation
-* Reporting & Decision Support
-* PostgreSQL Database Management
+- Relational Database Design
+- PostgreSQL
+- SQL Query Writing
+- SQL Aggregations
+- SQL Joins
+- Business-Oriented Data Analysis
+- Inventory Analysis
+- Reporting & Decision Making
 
 ---
 
 # 📸 Project Preview
 
-> Add screenshots here showing:
->
-> * Database Tables
-> * ER Diagram (optional)
-> * SQL Query Results
-> * PostgreSQL Output
-> * Execution Screenshots
+Add screenshots for:
+
+- Database Tables
+- PostgreSQL Output
+- SQL Query Results
+- Execution Screenshots
+- ER Diagram (Optional)
 
 ---
 
-# ⭐ Repository Features
+# ⭐ Key Features
 
-* Clean SQL Scripts
-* Structured Database Design
-* Beginner-Friendly
-* Real-World Business Questions
-* Interview-Oriented SQL Practice
-* Well Documented
+- Beginner-Friendly
+- End-to-End SQL Project
+- Real Business Scenario
+- Interview-Oriented Queries
+- Well Structured SQL Script
+- Clean Database Design
+- Business Insights
 
 ---
 
@@ -302,6 +321,14 @@ Through this project, I strengthened my understanding of:
 
 **Aspiring Data Analyst**
 
-**Skills:** SQL • PostgreSQL • Excel • Power BI • Python
+### Skills
 
-If you found this project helpful, consider giving it a ⭐ on GitHub.
+- PostgreSQL
+- SQL
+- Excel
+- Power BI
+- Python
+
+---
+
+⭐ **If you found this project helpful, consider giving it a Star on GitHub!**
